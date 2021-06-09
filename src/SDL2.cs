@@ -158,10 +158,10 @@ namespace SDL2
 		/* malloc/free are used by the marshaler! -flibit */
 
 		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		internal static extern IntPtr SDL_malloc(IntPtr size);
+		public static extern IntPtr SDL_malloc(IntPtr size);
 
 		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		internal static extern void SDL_free(IntPtr memblock);
+		public static extern void SDL_free(IntPtr memblock);
 
 		/* Buffer.BlockCopy is not available in every runtime yet. Also,
 		 * using memcpy directly can be a compatibility issue in other
