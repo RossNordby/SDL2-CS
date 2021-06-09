@@ -4373,15 +4373,15 @@ namespace SDL2
 		public static extern SDL_bool SDL_HasClipboardText();
 
 		[DllImport(nativeLibName, EntryPoint = "SDL_GetClipboardText", CallingConvention = CallingConvention.Cdecl)]
-		private static extern IntPtr INTERNAL_SDL_GetClipboardText();
+		public static extern IntPtr INTERNAL_SDL_GetClipboardText();
 		public static string SDL_GetClipboardText()
 		{
 			return UTF8_ToManaged(INTERNAL_SDL_GetClipboardText(), true);
 		}
 
 		[DllImport(nativeLibName, EntryPoint = "SDL_SetClipboardText", CallingConvention = CallingConvention.Cdecl)]
-		private static extern unsafe int INTERNAL_SDL_SetClipboardText(
-			byte* text
+		public static extern unsafe int INTERNAL_SDL_SetClipboardText(
+			byte* nullTerminatedUTF8
 		);
 		public static unsafe int SDL_SetClipboardText(
 			string text
